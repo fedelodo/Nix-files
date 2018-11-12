@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./desktop.nix
       ./developement.nix
+      ./laptop.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -38,6 +39,12 @@ networking.networkmanager.enable = true;
   # $ nix search wget
    environment.systemPackages = with pkgs; [
      firefox
+     libnotify
+     zsh
+     rcm
+     gnupg1compat
+     gnupg
+     pwgen
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -81,7 +88,8 @@ networking.networkmanager.enable = true;
      uid = 1000;
      extraGroups = [ "wheel"
 		     "networkmanager" ];
-   };
+     shell = pkgs.zsh;
+ };
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database

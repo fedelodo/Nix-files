@@ -17,7 +17,7 @@ environment.systemPackages = with pkgs; [
 	compton
 	i3-gaps
 	i3lock
-	i3blocks
+	i3lock-fancy
 	scrot
 	unclutter
 	neofetch
@@ -31,6 +31,11 @@ environment.systemPackages = with pkgs; [
 	spaceFM
 	polybar
 	xorg.xbacklight
+	conky
+	xorg.xev
+	xdo
+	xdotool
+	xorg.xwininfo
 ];
 
 fonts = {
